@@ -1,0 +1,26 @@
+program derivative
+implicit none
+
+integer :: i
+real :: h,f(5),x,a
+
+read*,a
+read*,h
+
+do i=1,5
+
+x = (i-3)*h
+
+f(i) = -0.1*(a+x)**4 - 0.15*(a+x)**3 - 0.5*(a+x)**2 - 0.25*(a+x) + 1.2
+
+end do
+
+do i=1,5
+
+print*, f(i)
+
+end do
+
+end program
+
+

@@ -1,0 +1,30 @@
+program derivative
+implicit none
+
+real :: i,h,a,f(5),aprime
+
+print*,'The function is (-0.1)*x^4 - (0.15)*x^3 -(0.5)*x^2 -(0.25)*x + 1.2'
+
+print*,'Enter the point at which the derivative is to be found'
+read*, a
+
+print*,'Enter the step size'
+read*, h
+
+do i= a-2*h,a+2*h,h
+
+f(i) = -0.1*i**4 - 0.15*i**3 - 0.5*i**2 - 0.25*i + 1.2
+
+end do
+
+do i= a-2*h,a+2*h,h
+
+print*, f(i)
+
+end do
+
+aprime = (-f(a+2*h) + 8*f(a+h) - 8*f(a-h) + f(a-2*h))/(12*h)
+
+print*, aprime
+
+end program
