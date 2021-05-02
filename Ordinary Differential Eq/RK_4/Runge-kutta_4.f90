@@ -1,4 +1,4 @@
-program euler
+program RK4
 implicit none
 
 real,allocatable,dimension(:) :: y,k1,k2,k3,k4
